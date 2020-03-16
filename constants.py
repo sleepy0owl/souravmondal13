@@ -1,0 +1,1 @@
+MONGODBURL="mongodb+srv://admin:msqube@pulse-cluster-drmdj.mongodb.net/test?retryWrites=true&w=majority"

@@ -1,0 +1,28 @@
+name: mongo-sink-
+connector.class: com.mongodb.kafka.connect.MongoSinkConnector
+tasks.max: 1
+topics: 
+    - filetosink4
+connection.uri: mongodb+srv://admin:msqube@pulse-cluster-drmdj.mongodb.net/test?retryWrites=true&w=majority
+database: PulseDataSink
+
+collection: project
+
+key.converter:
+    key.converter: io.confluent.connect.avro.AvroConverter
+    key.converter.schemas.enable: true
+    key.converter.schema.registry.url: https://psrc-epk8y.australia-southeast1.gcp.confluent.cloud
+    key.converter.schema.registry.basic.auth.user.info: KVVKJ7AI73MC4BS4:bKiRRLoqd7f9iRdYmhaYI7Wf3ED0q1zFON+mFQG2sqw0YZCPPBrT07H1mXS/Nyh8
+
+value.converter:
+    value.converter: io.confluent.connect.avro.AvroConverter
+    value.converter.schema.enable: true
+    value.converter.schema.registry.url: https://psrc-epk8y.australia-southeast1.gcp.confluent.cloud
+    value.converter.schema.registry.basic.auth.user.info: KVVKJ7AI73MC4BS4:bKiRRLoqd7f9iRdYmhaYI7Wf3ED0q1zFON+mFQG2sqw0YZCPPBrT07H1mXS/Nyh8
+
+transforms:
+    transforms: dropColumns,renameField,hoistField
+    transforms.dropColumns.type: org.apache.kafka.connect.transforms.ReplaceField$Value
+    transforms.renameField.type: org.apache.kafka.connect.transforms.ReplaceField$Value
+    transforms.hoistField.type: org.apache.kafka.connect.transforms.HoistField$Value
+    

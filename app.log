@@ -1,0 +1,9 @@
+INFO:root:filename project
+INFO:root:columnName  project.include
+INFO:root:collection name project
+INFO:root:rename fields
+INFO:root:['Name', 'Description', 'Key', 'Type', 'Lead', 'Url']
+INFO:root:current fields
+INFO:root:['Projectname', 'Projectdescription', 'Projectkey', 'Projecttype', 'Projectlead', 'Projecturl']
+INFO:root:[Issuetype,Issueid,Summary,Assignee,Status,Resolution,Created,Updated,Issuekey,Parentid,Reporter,Priority,DueDate,FixVersions,Sprint,CustomfieldVerifier,]
+INFO:root:Projectname:Name,Projectdescription:Description,Projectkey:Key,Projecttype:Type,Projectlead:Lead,Projecturl:Url
